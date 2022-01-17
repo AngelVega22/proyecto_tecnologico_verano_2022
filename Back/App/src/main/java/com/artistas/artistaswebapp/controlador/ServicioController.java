@@ -50,7 +50,7 @@ public class ServicioController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Boolean> delete(@PathVariable("id") Integer id ){
 
-        return servicioServicio.findById(id).isEmpty()?new ResponseEntity(HttpStatus.NO_CONTENT)
+        return servicioServicio.findById(id)==null?new ResponseEntity(HttpStatus.NO_CONTENT)
                 :new ResponseEntity(servicioServicio.deleteById(id),HttpStatus.OK);
 
     }
